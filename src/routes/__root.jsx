@@ -1,9 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
-
 import Navbar from "../reactComponents/navbar";
 import DotGrid from "../reactComponents/reactGridBits/dotGrid/dotGridCanvas";
-import useDarkMode from "../hooks/useThemehook";
 
 export const Route = createRootRoute({
   component: RootComponent,

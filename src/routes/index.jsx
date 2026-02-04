@@ -9,6 +9,11 @@ import { UserRound } from "lucide-react";
 import Resume from "../reactComponents/resume/Resume";
 import KeySkills from "../reactComponents/skillSet/KeySkills";
 
+import Experience from "../reactComponents/experience/Experience";
+import Project from "../reactComponents/projectSection/Project";
+import About from "../reactComponents/about/About";
+import { Briefcase, FolderKanban, User } from "lucide-react";
+
 export const Route = createFileRoute("/")({
   component: RouteComponent,
 });
@@ -104,69 +109,54 @@ function RouteComponent() {
           </div>
         </div>
       </div>
-
-      {/* SECOND SECTION */}
-      <div className="w-full mt-8 sm:mt-10 m-2">
-        <div
-          className="w-full bg-[#eff0f4] dark:bg-gray-900 rounded-2xl border border-neutral-200/80
-
-            shadow-md
-            dark:border-neutral-800/80 p-3 sm:p-5 md:p-6"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 w-full">
-            {/* Resume */}
-            <div className="lg:col-span-2 dark:bg-black/50 bg-white/50 p-2 sm:p-3 rounded-2xl ">
-              <Resume />
-            </div>
-
-            {/* Profile + Skills */}
-            <div className="relative bg-white dark:bg-gray-900 rounded-2xl border p-2 sm:p-3 lg:col-span-3  border-neutral-200/80
-
-            shadow-md
-            dark:border-neutral-800/80">
-              <div className="relative flex h-full flex-col gap-6 overflow-hidden rounded-xl p-4 sm:p-6 ">
-                <div className="relative flex flex-col gap-6">
-                  {/* Top */}
-                  <div className="flex w-full items-center">
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-lg border border-gray-600 p-2">
-                        <UserRound className="h-4 w-4 text-black dark:text-neutral-400" />
-                      </div>
-
-                      <div>
-                        <p className="text-lg sm:text-xl font-medium">
-                          Mathan G
-                        </p>
-                        <p className="text-sm sm:text-base text-neutral-500 font-medium uppercase">
-                          Software Engineer
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Center */}
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-lg sm:text-2xl md:text-4xl font-bold text-balance text-black dark:text-white">
-                      Building visual systems that turn complex logic into
-                      intuitive workflows.
-                    </h3>
-
-                    <h2 className="text-sm sm:text-base text-black dark:text-neutral-400 leading-relaxed">
-                      I build node-based workflows, schema mappers, and UI
-                      builders that help teams configure and evolve systems
-                      without manual complexity.
-                    </h2>
-                  </div>
-
-                  {/* Skills */}
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold">Expertise</h3>
-                    <KeySkills />
-                  </div>
-                </div>
-              </div>
+      {/* EXPERIENCE SECTION */}
+      <div>
+        <div className="w-full flex items-center justify-center ">
+          <div className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide text-neutral-900 dark:text-white border border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/50 backdrop-blur-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.35)] overflow-hidden">
+            <span className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500/20 via-cyan-400/10 to-pink-500/20" />
+            <span className="h-2.5 w-2.5 rounded-full bg-purple-500 shadow-[0_0_25px_rgba(168,85,247,0.7)]" />
+            EXPERIENCE{" "}
+            <span className="text-purple-500 dark:text-purple-300">
+              {" "}
+              <Briefcase className="h-5 w-5" />
+            </span>
+          </div>
+        </div>
+        <Experience />
+      </div>
+      {/* PROJECT SECTION */}
+      <div>
+        <div className="w-full flex items-center justify-center  mb-6 sm:mb-8">
+          <div className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide text-neutral-900 dark:text-white border border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/50 backdrop-blur-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.35)] overflow-hidden">
+            <span className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500/20 via-cyan-400/10 to-pink-500/20 flex items-center" />
+            <span className="h-2.5 w-2.5 rounded-full bg-purple-500 shadow-[0_0_25px_rgba(168,85,247,0.7)]" />
+            <span> PROJECT{" "}</span>
+            <span className="text-purple-500 dark:text-purple-300">
+              {" "}
+              <FolderKanban className="h-5 w-5" />{" "}
+            </span>
+          </div>
+        </div>
+        <div className="rounded-2xl border border-neutral-200 bg-white/80  shadow-sm backdrop-blur-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-950/60 ">
+          <Project />
+        </div>
+      </div>
+      {/* ABOUT SECTION */}
+      <div className="w-full">
+        <div className="w-full rounded-2xl p-3 sm:p-5 md:p-6">
+          <div className="w-full flex items-center justify-center">
+            <div className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide text-neutral-900 dark:text-white border border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/50 backdrop-blur-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.35)] overflow-hidden">
+              <span className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500/20 via-cyan-400/10 to-pink-500/20" />
+              <span className="h-2.5 w-2.5 rounded-full bg-purple-500 shadow-[0_0_25px_rgba(168,85,247,0.7)]" />
+              ABOUT{" "}
+              <span className="text-purple-500 dark:text-purple-300">
+                {" "}
+                <User className="h-5 w-5" />
+              </span>
             </div>
           </div>
+
+          <About />
         </div>
       </div>
     </>

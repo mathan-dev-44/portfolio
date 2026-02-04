@@ -72,7 +72,7 @@ export default function Navbar({ handleToggleHoverColor }) {
               shadow-sm
               dark:border-neutral-800/40
               dark:bg-neutral-950/30
-            `
+            `,
         )}
       >
         {/* LEFT: LOGO */}
@@ -101,7 +101,7 @@ export default function Navbar({ handleToggleHoverColor }) {
               Mathan
             </p>
             <p className="text-xs text-neutral-500 dark:text-neutral-400">
-              Frontend + Workflow Systems
+              Software Engineer
             </p>
           </div>
         </div>
@@ -114,14 +114,13 @@ export default function Navbar({ handleToggleHoverColor }) {
             items-center
             gap-1
             rounded-2xl
-            border
-            border-neutral-200/60
+
             bg-white/40
             px-2
             py-2
             shadow-sm
             backdrop-blur-xl
-            dark:border-neutral-800/60
+
             dark:bg-neutral-900/20
           "
         >
@@ -145,7 +144,7 @@ export default function Navbar({ handleToggleHoverColor }) {
                   `,
                   active
                     ? "bg-neutral-900 text-white dark:bg-white dark:text-black"
-                    : "text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800/50"
+                    : "text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800/50",
                 )}
               >
                 {item.label}
@@ -231,7 +230,7 @@ export default function Navbar({ handleToggleHoverColor }) {
       <div
         className={cn(
           "sm:hidden overflow-hidden transition-all duration-300",
-          open ? "max-h-96 mt-3" : "max-h-0"
+          open ? "max-h-96 mt-3" : "max-h-0",
         )}
       >
         <div
@@ -269,7 +268,7 @@ export default function Navbar({ handleToggleHoverColor }) {
                   `,
                   active
                     ? "bg-neutral-900 text-white dark:bg-white dark:text-black"
-                    : "text-neutral-800 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800/60"
+                    : "text-neutral-800 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800/60",
                 )}
               >
                 {item.label}
