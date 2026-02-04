@@ -8,7 +8,7 @@ export default function Resume() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="relative h-full rounded-xl border bg-white dark:bg-black/50 p-3 overflow-hidden">
+    <div className="relative h-full rounded-xl  bg-white dark:bg-black/50 p-3 overflow-hidden">
       {/* Actions */}
       <div className="absolute right-3 top-3 z-10 flex gap-2">
         <a

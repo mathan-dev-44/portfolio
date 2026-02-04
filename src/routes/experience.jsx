@@ -11,8 +11,7 @@ const experienceData = [
     year: "Oct 2023 – Apr 2026",
     logo: (
       <svg
-        width={"2.38vw"}
-        height={"2.66vh"}
+        className="w-full h-full"
         viewBox="0 0 46 29"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -67,44 +66,60 @@ workflow-based systems`,
 
 function RouteComponent() {
   return (
-    <>
-      <div className="m-10 p-2 h-[80%]">
-        <div className="relative space-y-10">
+    <div className="w-full px-4 sm:px-3  py-10">
+      <div className="mx-auto w-full">
+        <div className="relative  w-full space-y-8 sm:space-y-10">
           {/* Vertical line */}
-          <div className="absolute left-4 top-0 h-full w-px " />
+          {/* <div className="absolute left-[18px] top-0 h-full w-px bg-neutral-200 dark:bg-neutral-800" /> */}
+
           {experienceData.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative pl-12"
+              className="relative  lg:pl-12 sm:pl-0"
             >
+              {/* Timeline dot */}
+              {/* <div className="absolute left-[10px] top-7 z-20 h-4 w-4 rounded-full border-2 border-neutral-900 bg-white dark:border-neutral-200 dark:bg-neutral-900" /> */}
+
               {/* Card */}
-              <div className="rounded-xl border bg-white p-6 shadow-sm dark:bg-neutral-900">
-                <div className="flex w-full items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <h4 className=" text-lg font-semibold text-black dark:text-white">
-                      {exp.company}
-                    </h4>
-                    <div className=" z-10 flex  items-center justify-center rounded-full bg-white dark:bg-neutral-900">
-                      {
-                        <div className=" text-black dark:text-white">
-                          {exp.logo}
-                        </div>
-                      }
+              <div className="rounded-2xl border border-neutral-200 bg-white/80 p-4 shadow-sm backdrop-blur-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-950/60 sm:p-6">
+                {/* HEADER */}
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+                  {/* Left side: company + logo */}
+                  <div className="flex items-start gap-3">
+                    {/* Logo box */}
+                    <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+                      <div className="h-6 w-6">{exp.logo}</div>
+                    </div>
+
+                    {/* Company name */}
+                    <div>
+                      <h4 className="text-base font-semibold tracking-tight text-neutral-900 dark:text-white sm:text-lg">
+                        {exp.company}
+                      </h4>
+
+                      {/* Mobile year */}
+                      <div className="mt-0.5 text-sm font-medium text-neutral-500 sm:hidden">
+                        {exp.year}
+                      </div>
                     </div>
                   </div>
-                  <div className="text-sm text-neutral-500 whitespace-nowrap">
+
+                  {/* Desktop year */}
+                  <div className="hidden whitespace-nowrap text-sm font-medium text-neutral-500 sm:block">
                     {exp.year}
                   </div>
                 </div>
 
-                <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+                {/* Points */}
+                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-[15px]">
                   {exp.points.map((point, i) => (
-                    <li key={i} className="leading-relaxed">
-                      {point}
+                    <li key={i} className="flex gap-2">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-600" />
+                      <span>{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -113,6 +128,6 @@ function RouteComponent() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -45,7 +45,13 @@ const KeySkills = () => {
 
   return (
     <motion.div
-      className="flex flex-wrap gap-4 p-2"
+      className="
+      grid gap-3 p-1
+      grid-cols-2
+      sm:grid-cols-3
+      md:grid-cols-4
+      lg:grid-cols-4
+    "
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -59,9 +65,13 @@ const KeySkills = () => {
             variants={badgeVariants}
             whileHover="hover"
             style={{ "--skill-color": skill.color }}
-            className="group relative flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-2xl border bg-[#eff0f4] transition-shadow dark:bg-neutral-900"
+            className="
+            group relative flex aspect-square w-full flex-col items-center justify-center gap-2
+            rounded-2xl border bg-[#eff0f4]
+            transition-shadow dark:bg-neutral-900
+          "
           >
-            {/* Glow background */}
+            {/* Glow */}
             <div
               className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               style={{
@@ -70,17 +80,17 @@ const KeySkills = () => {
               }}
             />
 
-            {/* Icon (animated, NOT the card) */}
+            {/* Icon */}
             <motion.div
               variants={{ hover: { scale: 1.15 } }}
               transition={{ type: "spring", stiffness: 300, damping: 18 }}
               className="relative z-10"
             >
-              <Icon className="h-12 w-12 text-gray-400 transition-colors duration-300 group-hover:text-[color:var(--skill-color)]" />
+              <Icon className="h-10 w-10 sm:h-11 sm:w-11 md:h-12 md:w-12 text-gray-400 transition-colors duration-300 group-hover:text-[color:var(--skill-color)]" />
             </motion.div>
 
-            {/* Skill name */}
-            <span className="relative z-10 text-sm font-medium tracking-wide text-neutral-600 transition-colors duration-300 group-hover:text-black dark:text-neutral-400 dark:group-hover:text-white">
+            {/* Text */}
+            <span className="relative z-10 text-xs sm:text-sm font-medium tracking-wide text-neutral-600 transition-colors duration-300 group-hover:text-black dark:text-neutral-400 dark:group-hover:text-white">
               {skill.name}
             </span>
           </motion.div>
