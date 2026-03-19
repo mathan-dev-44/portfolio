@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Download, ExternalLink } from "lucide-react";
 
 export default function Resume() {
-  const PDF_URL = "/mathan_s_Resume_updated.pdf";
-  const Image_URL = "/mathan_s_Resume_updated.jpg";
+  const PDF_URL = "/mathan_s_Resumee.pdf";
+  const Image_URL = "/mathan_s_Resumee_page-0001.jpg";
 
   const [loaded, setLoaded] = useState(false);
 

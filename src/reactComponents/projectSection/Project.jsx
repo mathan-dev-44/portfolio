@@ -18,6 +18,10 @@ export const projects = [
     points: [
       "Developed a low-code workflow automation platform with a node-based visual editor for designing and managing complex workflows.",
       "Designed reusable, schema-driven UI components to support configurable and extensible workflows.",
+      `Built a WYSIWYG, low-code UI builder, allowing users to visually compose and position components using
+grid-based layouts, accelerating UI assembly by 30%`,
+
+      "Implemented interactive drag-and-drop functionality and parent–child relationships using React Flow.",
     ],
   },
   {
@@ -28,6 +32,30 @@ export const projects = [
       "Used Lodash to compare new and existing schemas for validating changes and safely merging schema updates.",
       "Implemented edge-level validation to ensure accurate request–response field mapping across connected nodes.",
       "Built reusable components for schema visualization to accelerate future workflow development.",
+    ],
+  },
+  {
+    title: "JSON Drfit",
+    link: "https://json-drift.vercel.app/",
+    image: "/drift.jpg",
+    tech: ["React", "React Flow", "Lodash", "monaco-editor", "Zustand"],
+    points: [
+      "Transforms raw JSON into an interactive node graph users can visually navigate nested structure",
+      "Built a live-synced Monaco code editor with custom syntax highlighting and validating Json",
+      "Designed a reactive multi-panel architecture using Zustand stores with adaptive layouts and clean separation between UI state and data logic.",
+      `Designed a 31-theme system where every element canvas, editor, nodes, and icons adapts to the selected theme,persisted across sessions`,
+    ],
+  },
+  {
+    title: "Ai-Sdk-Chat-Bot",
+    tech: ["React", "AiSdk", "NestJS", "TypeScript", "gemini-2.5-flash"],
+    link: "https://ai-sdk-chat-beta.vercel.app/",
+    image: "/aisdk.jpg",
+    points: [
+      "A full-stack AI chat application built with the Vercel AI SDK v5, featuring a React frontend and NestJS backend powered by Google Gemini.",
+      `Streaming chat responses via streamText with pipeUIMessageStreamToResponse
+Multi-step tool calling with tool response handling and dynamic message updates.`,
+      "Rich AI-rendered UI elements: reasoning, sources, artifacts, canvas, code blocks, chain-of-thought, web preview, and more",
     ],
   },
 ];
@@ -64,7 +92,7 @@ const Project = () => {
             <p className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
               A few projects I built with{" "}
               <span className="font-semibold text-neutral-900 dark:text-white">
-                React Flow
+                React , React Flow
               </span>
               ,{" "}
               <span className="font-semibold text-neutral-900 dark:text-white">
@@ -92,32 +120,35 @@ const Project = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: "easeOut" }}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
               viewport={{ once: true }}
+              style={{ willChange: "transform, opacity" }}
               className="
-                group
-                relative
-                overflow-hidden
-                rounded-2xl
-                border
-                border-neutral-200
-                bg-white/80
-                p-5
-                shadow-sm
-                backdrop-blur-sm
-                transition
-                hover:-translate-y-1
-                hover:shadow-lg
-                dark:border-neutral-800
-                dark:bg-neutral-950/60
-                sm:p-6
-              "
+    group
+    relative
+    overflow-hidden
+    rounded-2xl
+    border
+    border-neutral-200
+    bg-white/80
+    p-5
+    shadow-sm
+    backdrop-blur-[6px]
+    transition-shadow duration-300
+    hover:shadow-md
+    dark:border-neutral-800
+    dark:bg-neutral-950/60
+    sm:p-6
+  "
             >
               {/* glow layer */}
               <div
                 className="
+                group
+                cursor-pointer
                   pointer-events-none
                   absolute
                   inset-0
@@ -132,6 +163,31 @@ const Project = () => {
                 }}
               />
 
+              {project.image && (
+                <div className="relative mb-4 overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-48 w-full object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.04]"
+                  />
+
+                  {/* subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-80" />
+
+                  {/* optional link badge */}
+                  {project.link && (
+                    <div className="absolute right-3 top-3 rounded-full bg-white/80 px-2 py-1 text-xs font-medium text-neutral-800 backdrop-blur dark:bg-black/50 dark:text-white">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        className="flex items-center gap-1"
+                      >
+                        Visit ↗
+                      </a>
+                    </div>
+                  )}
+                </div>
+              )}
               {/* Title */}
               <h3 className="relative z-10 text-base font-semibold tracking-tight text-neutral-900 dark:text-white sm:text-lg">
                 {project.title}
