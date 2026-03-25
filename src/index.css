@@ -5,3 +5,19 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dot-grid {
+  scroll-behavior: smooth;
+}
+
+/* Applied during theme toggle to prevent the flash of transitioning colors */
+.theme-switching,
+.theme-switching * {
+  transition-duration: 0s !important;
+}
+

@@ -123,8 +123,12 @@ const Project = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -6 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              viewport={{ once: true }}
+              transition={{
+                duration: 0.35,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: index * 0.07,
+              }}
+              viewport={{ once: true, amount: 0.1 }}
               style={{ willChange: "transform, opacity" }}
               className="
     group
@@ -133,14 +137,13 @@ const Project = () => {
     rounded-2xl
     border
     border-neutral-200
-    bg-white/80
+    bg-white/95
     p-5
     shadow-sm
-    backdrop-blur-[6px]
     transition-shadow duration-300
     hover:shadow-md
     dark:border-neutral-800
-    dark:bg-neutral-950/60
+    dark:bg-neutral-950/90
     sm:p-6
   "
             >

@@ -15,4 +15,16 @@ export default defineConfig({
     }),
     react(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react": ["react", "react-dom"],
+          "vendor-gsap": ["gsap"],
+          "vendor-motion": ["motion"],
+          "vendor-icons": ["react-icons", "lucide-react"],
+        },
+      },
+    },
+  },
 });

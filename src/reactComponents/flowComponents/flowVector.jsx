@@ -117,7 +117,7 @@ function FlowVectorInner() {
   return (
     <div
       style={{ height: "100%", width: "100%" }}
-      className="p-2 backdrop-blur-3xl"
+      className="p-2"
     >
       <ReactFlow
         nodes={nodes}

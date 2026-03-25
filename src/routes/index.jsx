@@ -1,18 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { memo } from "react";
 import TextType from "../reactComponents/reactGridBits/EncryptText/textType";
-import RotatingText from "../reactComponents/reactGridBits/RoatatingText/roatatingText";
-import { cn } from "../lib/utils";
-import { ReactFlowProvider } from "reactflow";
-import FlowVector from "../reactComponents/flowComponents/flowVector";
-import { UserRound } from "lucide-react";
-import Resume from "../reactComponents/resume/Resume";
-import KeySkills from "../reactComponents/skillSet/KeySkills";
-
+import { Briefcase, FolderKanban, User } from "lucide-react";
 import Experience from "../reactComponents/experience/Experience";
 import Project from "../reactComponents/projectSection/Project";
 import About from "../reactComponents/about/About";
-import { Briefcase, FolderKanban, User } from "lucide-react";
+import FlowVector from "../reactComponents/flowComponents/flowVector";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -96,15 +89,13 @@ function RouteComponent() {
         {/* RIGHT FLOW SECTION */}
         <div className="flex-1 z-50 rounded-md flex w-full">
           <div
-            className="w-full rounded-2xl border  border-neutral-200/80
+            className="w-full rounded-2xl border border-neutral-200/80
             shadow-md
             dark:border-neutral-800/80
-            bg-white/40 dark:bg-black/20 backdrop-blur-sm overflow-hidden"
+            bg-white/60 dark:bg-black/40 overflow-hidden"
           >
             <div className="h-[220px] sm:h-[300px] md:h-[420px] lg:h-[520px] w-full">
-              <ReactFlowProvider>
-                <FlowVector />
-              </ReactFlowProvider>
+              <FlowVector />
             </div>
           </div>
         </div>
@@ -137,7 +128,7 @@ function RouteComponent() {
             </span>
           </div>
         </div>
-        <div className="rounded-2xl border border-neutral-200 bg-white/80  shadow-sm backdrop-blur-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-950/60 ">
+        <div className="rounded-2xl border border-neutral-200 bg-white/95 shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-950/90">
           <Project />
         </div>
       </div>
@@ -155,7 +146,6 @@ function RouteComponent() {
               </span>
             </div>
           </div>
-
           <About />
         </div>
       </div>

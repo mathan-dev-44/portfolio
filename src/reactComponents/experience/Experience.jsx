@@ -72,15 +72,15 @@ const Experience = () => {
               key={index}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: "easeOut" }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true, amount: 0.15 }}
               className="relative  lg:pl-12 sm:pl-0"
             >
               {/* Timeline dot */}
               {/* <div className="absolute left-[10px] top-7 z-20 h-4 w-4 rounded-full border-2 border-neutral-900 bg-white dark:border-neutral-200 dark:bg-neutral-900" /> */}
 
               {/* Card */}
-              <div className="rounded-2xl border border-neutral-200 bg-white/80 p-4 shadow-sm backdrop-blur-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-950/60 sm:p-6">
+              <div className="rounded-2xl border border-neutral-200 bg-white/95 p-4 shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-950/90 sm:p-6">
                 {/* HEADER */}
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
                   {/* Left side: company + logo */}
