@@ -43,7 +43,7 @@ function RootComponent() {
       </div>
 
       <footer className="relative z-10 mt-10 text-sm md:text-lg flex w-full justify-center p-4 bg-[#eff0f4] dark:bg-[#141414] dark:border-zinc-300 border-zinc-700 rounded-md dark:text-white">
-        © {new Date().getFullYear()} Mathan. All rights reserved.
+        © {new Date().getFullYear()} Mathan G. All rights reserved.
       </footer>
     </div>
   );

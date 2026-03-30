@@ -94,7 +94,7 @@ function Navbar() {
 
           <div className="hidden sm:block leading-tight">
             <p className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-white">
-              Mathan
+              Mathan G
             </p>
             <p className="text-xs text-neutral-500 dark:text-neutral-400">
               Software Engineer
