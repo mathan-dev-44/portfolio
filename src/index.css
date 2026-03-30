@@ -2,6 +2,17 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --dot-color: #d1d5db;
+  --dot-active-color: #6366f1;
+  --dot-glow: rgba(99, 102, 241, 0.1);
+}
+html.dark {
+  --dot-color: #2e2e2e;
+  --dot-active-color: rgba(255, 255, 255, 0.9);
+  --dot-glow: rgba(148, 163, 255, 0.08);
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -11,13 +22,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.dot-grid {
-  scroll-behavior: smooth;
-}
-
 /* Applied during theme toggle to prevent the flash of transitioning colors */
 .theme-switching,
 .theme-switching * {
   transition-duration: 0s !important;
 }
-

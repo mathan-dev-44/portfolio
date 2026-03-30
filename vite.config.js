@@ -24,8 +24,10 @@ export default defineConfig({
       output: {
         manualChunks: {
           "vendor-react": ["react", "react-dom"],
+          "vendor-reactflow": ["reactflow"],
           "vendor-gsap": ["gsap"],
           "vendor-motion": ["motion"],
+          "vendor-lenis": ["lenis"],
           "vendor-icons": ["react-icons", "lucide-react"],
         },
       },

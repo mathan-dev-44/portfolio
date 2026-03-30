@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { motion } from "motion/react";
 import {
   SiReact,
@@ -14,35 +14,35 @@ import {
   SiGit,
 } from "react-icons/si";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+  },
+};
+
+const badgeVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: "spring", stiffness: 260, damping: 20 },
+  },
+};
+
+const skills = [
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "Vite", icon: SiVite, color: "#ffc820" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
+  { name: "Redis", icon: SiRedis, color: "#DC382D" },
+  { name: "Git", icon: SiGit, color: "#F05032" },
+];
+
 const KeySkills = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: 0.2 },
-    },
-  };
-
-  const badgeVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { type: "spring", stiffness: 260, damping: 20 },
-    },
-  };
-
-  const skills = [
-    { name: "React", icon: SiReact, color: "#61DAFB" }, // React cyan
-    { name: "Vite", icon: SiVite, color: "#ffc820" }, // Vite purple
-    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" }, // JS yellow
-    { name: "TypeScript", icon: SiTypescript, color: "#3178C6" }, // TS blue
-    { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" }, // Tailwind teal
-    { name: "NestJS", icon: SiNestjs, color: "#E0234E" }, // Nest red
-    { name: "Redis", icon: SiRedis, color: "#DC382D" }, // Redis red
-    { name: "Git", icon: SiGit, color: "#F05032" }, // Git orange
-  ];
-
   return (
     <motion.div
       className="
@@ -101,4 +101,4 @@ const KeySkills = () => {
   );
 };
 
-export default KeySkills;
+export default memo(KeySkills);

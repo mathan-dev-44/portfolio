@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import useDarkMode from "../hooks/useThemehook";
 import { Sun, Moon, Github, Menu, X } from "lucide-react";
 import { SiReact, SiLinkedin } from "react-icons/si";
 import { Link, useLocation } from "@tanstack/react-router";
 import { cn } from "../lib/utils";
 
-export default function Navbar({ handleToggleHoverColor }) {
-  const { toggleDarkMode, isDarkMode, hoverColor } = useDarkMode();
+const ICON_BTN =
+  "h-10 w-10 rounded-2xl border border-neutral-200/60 bg-white/50 shadow-sm backdrop-blur-xl transition hover:bg-neutral-100 dark:border-neutral-800/70 dark:bg-neutral-900/30 dark:hover:bg-neutral-800/60 flex items-center justify-center";
+
+function Navbar() {
+  const { toggleDarkMode, isDarkMode } = useDarkMode();
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
@@ -19,18 +22,11 @@ export default function Navbar({ handleToggleHoverColor }) {
   ];
 
   useEffect(() => {
-    const el = document.querySelector(".dot-grid");
-    if (!el) return;
-
-    const onScroll = () => setIsScrolled(el.scrollTop > 0);
-    el.addEventListener("scroll", onScroll, { passive: true });
-
-    return () => el.removeEventListener("scroll", onScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 0);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    handleToggleHoverColor(hoverColor);
-  }, [hoverColor]);
 
   // ✅ close menu when route changes
   useEffect(() => {
@@ -158,19 +154,8 @@ export default function Navbar({ handleToggleHoverColor }) {
           {/* Github */}
           <button
             onClick={() => window.open("https://github.com/mathan-dev-44")}
-            className="
-              h-10 w-10 rounded-2xl
-              border border-neutral-200/60
-              bg-white/50
-              shadow-sm
-              backdrop-blur-xl
-              transition
-              hover:bg-neutral-100
-              dark:border-neutral-800/70
-              dark:bg-neutral-900/30
-              dark:hover:bg-neutral-800/60
-              flex items-center justify-center
-            "
+            aria-label="GitHub profile"
+            className={ICON_BTN}
           >
             <Github className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
           </button>
@@ -178,19 +163,8 @@ export default function Navbar({ handleToggleHoverColor }) {
           {/* LinkedIn */}
           <button
             onClick={() => window.open("https://www.linkedin.com/in/mathan-g-474413237")}
-            className="
-              h-10 w-10 rounded-2xl
-              border border-neutral-200/60
-              bg-white/50
-              shadow-sm
-              backdrop-blur-xl
-              transition
-              hover:bg-neutral-100
-              dark:border-neutral-800/70
-              dark:bg-neutral-900/30
-              dark:hover:bg-neutral-800/60
-              flex items-center justify-center
-            "
+            aria-label="LinkedIn profile"
+            className={ICON_BTN}
           >
             <SiLinkedin className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
           </button>
@@ -198,19 +172,8 @@ export default function Navbar({ handleToggleHoverColor }) {
           {/* Theme Toggle */}
           <button
             onClick={toggleDarkMode}
-            className="
-              h-10 w-10 rounded-2xl
-              border border-neutral-200/60
-              bg-white/50
-              shadow-sm
-              backdrop-blur-xl
-              transition
-              hover:bg-neutral-100
-              dark:border-neutral-800/70
-              dark:bg-neutral-900/30
-              dark:hover:bg-neutral-800/60
-              flex items-center justify-center
-            "
+            aria-label="Toggle theme"
+            className={ICON_BTN}
           >
             {isDarkMode ? (
               <Sun className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
@@ -222,20 +185,8 @@ export default function Navbar({ handleToggleHoverColor }) {
           {/* Hamburger ONLY MOBILE */}
           <button
             onClick={() => setOpen((p) => !p)}
-            className="
-              sm:hidden
-              h-10 w-10 rounded-2xl
-              border border-neutral-200/60
-              bg-white/50
-              shadow-sm
-              backdrop-blur-xl
-              transition
-              hover:bg-neutral-100
-              dark:border-neutral-800/70
-              dark:bg-neutral-900/30
-              dark:hover:bg-neutral-800/60
-              flex items-center justify-center
-            "
+            aria-label="Toggle menu"
+            className={cn(ICON_BTN, "sm:hidden")}
           >
             {open ? (
               <X className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
@@ -300,3 +251,5 @@ export default function Navbar({ handleToggleHoverColor }) {
     </div>
   );
 }
+
+export default memo(Navbar);

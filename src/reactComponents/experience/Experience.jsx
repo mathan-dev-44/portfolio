@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { motion } from "motion/react";
 export const experienceData = [
   {
@@ -124,4 +124,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default memo(Experience);

@@ -87,7 +87,7 @@ function RouteComponent() {
         </div>
 
         {/* RIGHT FLOW SECTION */}
-        <div className="flex-1 z-50 rounded-md flex w-full">
+        <div className="flex-1 rounded-md flex w-full">
           <div
             className="w-full rounded-2xl border border-neutral-200/80
             shadow-md

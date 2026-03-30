@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { motion } from "motion/react";
 import {
   SiReact,
@@ -163,7 +163,7 @@ const Project = () => {
                 delay: index * 0.07,
               }}
               viewport={{ once: true, amount: 0.1 }}
-              style={{ willChange: "transform, opacity" }}
+
               className="
     group
     relative
@@ -205,6 +205,7 @@ const Project = () => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="h-48 w-full object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-[1.04]"
                   />
 
@@ -309,4 +310,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default memo(Project);

@@ -41,6 +41,7 @@ export default function Resume() {
         <img
           src={Image_URL}
           onLoad={() => setLoaded(true)}
+          loading="lazy"
           alt="Resume Preview"
           className={`h-full w-full object-contain transition-opacity duration-500 ${
             loaded ? "opacity-100" : "opacity-0"
