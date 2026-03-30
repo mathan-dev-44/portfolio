@@ -1,5 +1,5 @@
-import { useCallback, useRef, useState } from "react";
-import { Outlet, createRootRoute } from "@tanstack/react-router";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Outlet, createRootRoute, useLocation } from "@tanstack/react-router";
 import Navbar from "../reactComponents/navbar";
 import DotGrid from "../reactComponents/reactGridBits/dotGrid/dotGridCanvas";
 
@@ -12,6 +12,10 @@ function RootComponent() {
   const handleToggleHoverColor = useCallback((color) => {
     setUpdateColor(color);
   }, []);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    document.querySelector(".dot-grid")?.scrollTo({ top: 0 });
+  }, [pathname]);
 
   return (
     <div

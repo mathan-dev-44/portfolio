@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useDarkMode from "../hooks/useThemehook";
 import { Sun, Moon, Github, Menu, X } from "lucide-react";
-import { SiReact } from "react-icons/si";
+import { SiReact, SiLinkedin } from "react-icons/si";
 import { Link, useLocation } from "@tanstack/react-router";
 import { cn } from "../lib/utils";
 
@@ -173,6 +173,26 @@ export default function Navbar({ handleToggleHoverColor }) {
             "
           >
             <Github className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
+          </button>
+
+          {/* LinkedIn */}
+          <button
+            onClick={() => window.open("https://www.linkedin.com/in/mathan-g-474413237")}
+            className="
+              h-10 w-10 rounded-2xl
+              border border-neutral-200/60
+              bg-white/50
+              shadow-sm
+              backdrop-blur-xl
+              transition
+              hover:bg-neutral-100
+              dark:border-neutral-800/70
+              dark:bg-neutral-900/30
+              dark:hover:bg-neutral-800/60
+              flex items-center justify-center
+            "
+          >
+            <SiLinkedin className="h-5 w-5 text-neutral-800 dark:text-neutral-200" />
           </button>
 
           {/* Theme Toggle */}

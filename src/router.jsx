@@ -11,7 +11,7 @@ const router = createRouter({
   routeTree,
   history: browserHistory,
   context: { auth: undefined },
-  scrollRestoration: true,
+  scrollRestoration: false,
    Wrap: ({ children }) => <>{children}</>,
   basepath: "/",
 });
