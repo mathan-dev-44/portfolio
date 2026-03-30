@@ -9,7 +9,33 @@ import {
   SiTypescript,
   SiJavascript,
   SiLodash,
+  SiVercel,
+  SiGooglegemini,
 } from "react-icons/si";
+
+// Zustand has no Simple Icon — bold Z path
+const ZustandIcon = ({ className, style }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    style={style}
+  >
+    <path d="M2 3h20v5L8 16h14v5H2v-5l14-8H2z" />
+  </svg>
+);
+
+// Monaco Editor — code bracket icon
+const MonacoIcon = ({ className, style }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    style={style}
+  >
+    <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+  </svg>
+);
 
 export const projects = [
   {
@@ -73,6 +99,14 @@ export const techMeta = {
   TypeScript: { icon: SiTypescript, color: "#3178C6", bg: "bg-blue-500/15" },
   JavaScript: { icon: SiJavascript, color: "#F7DF1E", bg: "bg-yellow-500/15" },
   Lodash: { icon: SiLodash, color: "#3492FF", bg: "bg-blue-500/15" },
+  AiSdk: { icon: SiVercel, color: "#888888", bg: "bg-neutral-500/15" },
+  Zustand: { icon: ZustandIcon, color: "#F6A623", bg: "bg-amber-500/15" },
+  "monaco-editor": { icon: MonacoIcon, color: "#007ACC", bg: "bg-blue-500/15" },
+  "gemini-2.5-flash": {
+    icon: SiGooglegemini,
+    color: "#4285F4",
+    bg: "bg-blue-500/15",
+  },
 };
 
 const Project = () => {
@@ -122,7 +156,7 @@ const Project = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -6 }}
+              // whileHover={{ y: -6 }}
               transition={{
                 duration: 0.35,
                 ease: [0.25, 0.46, 0.45, 0.94],
@@ -175,7 +209,7 @@ const Project = () => {
                   />
 
                   {/* subtle overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent opacity-80" />
 
                   {/* optional link badge */}
                   {project.link && (
@@ -266,7 +300,7 @@ const Project = () => {
               </ul>
 
               {/* Bottom hover line */}
-              <div className="relative z-10 mt-6 h-[2px] w-0 rounded-full bg-neutral-900 transition-all duration-300 group-hover:w-full dark:bg-white" />
+              <div className="relative z-10 mt-6 h-0.5 w-0 rounded-full bg-neutral-900 transition-all duration-300 group-hover:w-full dark:bg-white" />
             </motion.div>
           ))}
         </div>

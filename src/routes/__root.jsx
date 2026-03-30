@@ -23,11 +23,11 @@ function RootComponent() {
         gap={12}
         baseColor={updateColor !== "#3b82f6" ? "#ffffff" : "#000000"}
         activeColor={updateColor}
-        proximity={80}
-        shockRadius={200}
-        shockStrength={5}
-        resistance={750}
-        returnDuration={1.5}
+        // proximity={80}
+        // shockRadius={200}
+        // shockStrength={5}
+        // resistance={750}
+        // returnDuration={1.5}
       >
         <div className="relative z-10 min-h-screen w-full">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 ">

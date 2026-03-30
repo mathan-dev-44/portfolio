@@ -115,10 +115,7 @@ function FlowVectorInner() {
   );
 
   return (
-    <div
-      style={{ height: "100%", width: "100%" }}
-      className="p-2"
-    >
+    <div style={{ height: "100%", width: "100%" }} className="p-2">
       <ReactFlow
         nodes={nodes}
         edges={edges}

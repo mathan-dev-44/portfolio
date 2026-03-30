@@ -36,11 +36,11 @@ function RouteComponent() {
           </div>
           {/* Floating Tags (ALL screens, NO overlap) */}
           <div className="mt-4 flex flex-wrap items-center gap-2">
-            <div className="px-3 py-2 bg-purple-500/20 rounded-[6px] w-max font-medium dark:text-purple-300 text-purple-500 border border-purple-500/20 animate-wiggle duration-1000">
+            <div className="px-3 py-2 bg-purple-500/20 rounded-md w-max font-medium dark:text-purple-300 text-purple-500 border border-purple-500/20 animate-wiggle duration-1000">
               React developer ⚛️
             </div>
 
-            <div className="px-3 py-2 bg-blue-500/20 rounded-[6px] w-max font-medium dark:text-blue-300 text-blue-500 border border-blue-500/20 animate-wiggle duration-1000">
+            <div className="px-3 py-2 bg-blue-500/20 rounded-md w-max font-medium dark:text-blue-300 text-blue-500 border border-blue-500/20 animate-wiggle duration-1000">
               <div className="flex w-full gap-2 items-center">
                 <span>React Flow</span> <FlowIcon />
               </div>
@@ -94,7 +94,7 @@ function RouteComponent() {
             dark:border-neutral-800/80
             bg-white/60 dark:bg-black/40 overflow-hidden"
           >
-            <div className="h-[220px] sm:h-[300px] md:h-[420px] lg:h-[520px] w-full">
+            <div className="h-55 sm:h-75 md:h-105 lg:h-130 w-full">
               <FlowVector />
             </div>
           </div>
@@ -104,7 +104,7 @@ function RouteComponent() {
       <div>
         <div className="w-full flex items-center justify-center ">
           <div className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide text-neutral-900 dark:text-white border border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/50 backdrop-blur-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.35)] overflow-hidden">
-            <span className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500/20 via-cyan-400/10 to-pink-500/20" />
+            <span className="absolute inset-0 -z-10 bg-linear-to-r from-purple-500/20 via-cyan-400/10 to-pink-500/20" />
             <span className="h-2.5 w-2.5 rounded-full bg-purple-500 shadow-[0_0_25px_rgba(168,85,247,0.7)]" />
             EXPERIENCE{" "}
             <span className="text-purple-500 dark:text-purple-300">
@@ -119,9 +119,9 @@ function RouteComponent() {
       <div>
         <div className="w-full flex items-center justify-center  mb-6 sm:mb-8">
           <div className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide text-neutral-900 dark:text-white border border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/50 backdrop-blur-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.35)] overflow-hidden">
-            <span className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500/20 via-cyan-400/10 to-pink-500/20 flex items-center" />
+            <span className="absolute inset-0 -z-10 bg-linear-to-r from-purple-500/20 via-cyan-400/10 to-pink-500/20 flex items-center" />
             <span className="h-2.5 w-2.5 rounded-full bg-purple-500 shadow-[0_0_25px_rgba(168,85,247,0.7)]" />
-            <span> PROJECT{" "}</span>
+            <span> PROJECT </span>
             <span className="text-purple-500 dark:text-purple-300">
               {" "}
               <FolderKanban className="h-5 w-5" />{" "}
@@ -137,7 +137,7 @@ function RouteComponent() {
         <div className="w-full rounded-2xl p-3 sm:p-5 md:p-6">
           <div className="w-full flex items-center justify-center">
             <div className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm sm:text-base font-semibold tracking-wide text-neutral-900 dark:text-white border border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/50 backdrop-blur-xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.35)] overflow-hidden">
-              <span className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500/20 via-cyan-400/10 to-pink-500/20" />
+              <span className="absolute inset-0 -z-10 bg-linear-to-r from-purple-500/20 via-cyan-400/10 to-pink-500/20" />
               <span className="h-2.5 w-2.5 rounded-full bg-purple-500 shadow-[0_0_25px_rgba(168,85,247,0.7)]" />
               ABOUT{" "}
               <span className="text-purple-500 dark:text-purple-300">

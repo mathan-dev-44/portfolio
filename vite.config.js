@@ -13,7 +13,11 @@ export default defineConfig({
       routeTreeFile: "./src/routeTree.gen.ts",
       routesDirectory: "./src/routes",
     }),
-    react(),
+    react({
+      babel: {
+        plugins: [["babel-plugin-react-compiler"]],
+      },
+    }),
   ],
   build: {
     rollupOptions: {
