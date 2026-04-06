@@ -3,9 +3,11 @@ import { Outlet, createRootRoute, useLocation } from "@tanstack/react-router";
 import Lenis from "lenis";
 import Navbar from "../reactComponents/navbar";
 import DotBackground from "../reactComponents/DotBackground";
+import NotFound from "../reactComponents/NotFound";
 
 export const Route = createRootRoute({
   component: RootComponent,
+  notFoundComponent: NotFound,
 });
 
 function RootComponent() {
