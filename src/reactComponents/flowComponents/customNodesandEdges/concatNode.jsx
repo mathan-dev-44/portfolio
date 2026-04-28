@@ -1,13 +1,13 @@
-import { Handle, Position, useReactFlow,useStore } from "reactflow";
+import { Handle, Position, useReactFlow, useStore } from "reactflow";
 
 export default function ConcatNode({ id }) {
-  const { getEdges, getNode } = useReactFlow();
+  const { getEdges } = useReactFlow();
   const nodes = useStore((s) => s.nodes ?? []);
   const edges = getEdges();
   const incoming = edges.filter((e) => e.target === id);
 
   const values = incoming
-    .map((e) => getNode(e.source)?.data?.label)
+    .map((e) => nodes.find((n) => n.id === e.source)?.data?.label)
     .filter(Boolean);
 
   const result = values.join(" ");
